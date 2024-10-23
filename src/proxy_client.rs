@@ -23,22 +23,24 @@ struct Args {
 
     /// Optional env filepath - if none is supplied then the proxy defaults to using mainnet else just use a path to one of the supplied files in envs/ e.g. ./envs/sandbox.env
     #[clap(short, long)]
-    env_path: Option<String>
+    env_path: Option<String>,
 }
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    nym_bin_common::logging::setup_logging();
+    // nym_bin_common::logging::setup_logging();
+    nym_bin_common::logging::setup_tracing_logger();
     let args = Args::parse();
 
-    let nym_addr: Recipient = Recipient::try_from_base58_string(&args.server_address).expect("Invalid server address");
+    let nym_addr: Recipient =
+        Recipient::try_from_base58_string(&args.server_address).expect("Invalid server address");
 
     let proxy_client = tcp_proxy::NymProxyClient::new(
         nym_addr,
         &args.listen_address,
         &args.listen_port,
         args.close_timeout,
-        args.env_path.clone()
+        args.env_path.clone(),
     )
     .await?;
 

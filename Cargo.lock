@@ -2022,6 +2022,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
 
 [[package]]
+name = "matchers"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8263075bb86c5a1b1427b5ae862e8889656f126e9f77c484496e8b47cf5c5558"
+dependencies = [
+ "regex-automata 0.1.10",
+]
+
+[[package]]
 name = "memchr"
 version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2108,7 +2117,7 @@ dependencies = [
 [[package]]
 name = "nym-api-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bs58",
  "cosmrs",
@@ -2134,7 +2143,7 @@ dependencies = [
 [[package]]
 name = "nym-bandwidth-controller"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bip39",
  "log",
@@ -2155,7 +2164,7 @@ dependencies = [
 [[package]]
 name = "nym-bin-common"
 version = "0.6.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "const-str",
  "log",
@@ -2163,6 +2172,7 @@ dependencies = [
  "schemars",
  "semver",
  "serde",
+ "tracing-subscriber",
  "utoipa",
  "vergen",
 ]
@@ -2170,7 +2180,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core"
 version = "1.1.15"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -2229,7 +2239,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core-config-types"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "humantime-serde",
  "nym-config",
@@ -2245,7 +2255,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core-gateways-storage"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "cosmrs",
@@ -2264,7 +2274,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core-surb-storage"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "dashmap",
@@ -2281,7 +2291,7 @@ dependencies = [
 [[package]]
 name = "nym-coconut-bandwidth-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -2291,7 +2301,7 @@ dependencies = [
 [[package]]
 name = "nym-coconut-dkg-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -2305,7 +2315,7 @@ dependencies = [
 [[package]]
 name = "nym-compact-ecash"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bincode",
  "bls12_381",
@@ -2327,7 +2337,7 @@ dependencies = [
 [[package]]
 name = "nym-config"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "dirs",
  "handlebars",
@@ -2341,7 +2351,7 @@ dependencies = [
 [[package]]
 name = "nym-contracts-common"
 version = "0.5.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bs58",
  "cosmwasm-schema",
@@ -2356,7 +2366,7 @@ dependencies = [
 [[package]]
 name = "nym-country-group"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "serde",
  "tracing",
@@ -2365,7 +2375,7 @@ dependencies = [
 [[package]]
 name = "nym-credential-storage"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "bincode",
@@ -2383,7 +2393,7 @@ dependencies = [
 [[package]]
 name = "nym-credential-utils"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "log",
  "nym-bandwidth-controller",
@@ -2402,7 +2412,7 @@ dependencies = [
 [[package]]
 name = "nym-credentials"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bincode",
  "bls12_381",
@@ -2425,7 +2435,7 @@ dependencies = [
 [[package]]
 name = "nym-credentials-interface"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bls12_381",
  "nym-compact-ecash",
@@ -2441,7 +2451,7 @@ dependencies = [
 [[package]]
 name = "nym-crypto"
 version = "0.4.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "aead",
  "aes",
@@ -2469,7 +2479,7 @@ dependencies = [
 [[package]]
 name = "nym-ecash-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bs58",
  "cosmwasm-schema",
@@ -2483,7 +2493,7 @@ dependencies = [
 [[package]]
 name = "nym-ecash-time"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-compact-ecash",
  "time",
@@ -2492,7 +2502,7 @@ dependencies = [
 [[package]]
 name = "nym-exit-policy"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "serde",
  "serde_json",
@@ -2504,7 +2514,7 @@ dependencies = [
 [[package]]
 name = "nym-explorer-api-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-api-requests",
  "nym-contracts-common",
@@ -2516,7 +2526,7 @@ dependencies = [
 [[package]]
 name = "nym-explorer-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "log",
  "nym-explorer-api-requests",
@@ -2529,7 +2539,7 @@ dependencies = [
 [[package]]
 name = "nym-gateway-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "futures",
  "getrandom",
@@ -2565,7 +2575,7 @@ dependencies = [
 [[package]]
 name = "nym-gateway-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bs58",
  "futures",
@@ -2591,7 +2601,7 @@ dependencies = [
 [[package]]
 name = "nym-group-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "cosmwasm-schema",
  "cw-controllers",
@@ -2603,7 +2613,7 @@ dependencies = [
 [[package]]
 name = "nym-http-api-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "http 1.1.0",
@@ -2620,7 +2630,7 @@ dependencies = [
 [[package]]
 name = "nym-id"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-credential-storage",
  "nym-credentials",
@@ -2633,7 +2643,7 @@ dependencies = [
 [[package]]
 name = "nym-metrics"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "dashmap",
  "lazy_static",
@@ -2644,7 +2654,7 @@ dependencies = [
 [[package]]
 name = "nym-mixnet-contract-common"
 version = "0.6.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bs58",
  "cosmwasm-schema",
@@ -2664,7 +2674,7 @@ dependencies = [
 [[package]]
 name = "nym-multisig-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -2680,7 +2690,7 @@ dependencies = [
 [[package]]
 name = "nym-network-defaults"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "dotenvy",
  "log",
@@ -2693,7 +2703,7 @@ dependencies = [
 [[package]]
 name = "nym-node-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "base64 0.22.1",
  "celes",
@@ -2714,7 +2724,7 @@ dependencies = [
 [[package]]
 name = "nym-nonexhaustive-delayqueue"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "tokio",
  "tokio-stream",
@@ -2725,7 +2735,7 @@ dependencies = [
 [[package]]
 name = "nym-ordered-buffer"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "log",
  "thiserror",
@@ -2734,7 +2744,7 @@ dependencies = [
 [[package]]
 name = "nym-outfox"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "blake3",
  "chacha20",
@@ -2752,7 +2762,7 @@ dependencies = [
 [[package]]
 name = "nym-pemstore"
 version = "0.3.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "pem",
 ]
@@ -2776,7 +2786,7 @@ dependencies = [
 [[package]]
 name = "nym-sdk"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2825,7 +2835,7 @@ dependencies = [
 [[package]]
 name = "nym-serde-helpers"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "base64 0.22.1",
  "bs58",
@@ -2836,7 +2846,7 @@ dependencies = [
 [[package]]
 name = "nym-service-providers-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "log",
@@ -2850,7 +2860,7 @@ dependencies = [
 [[package]]
 name = "nym-socks5-client-core"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "anyhow",
  "dirs",
@@ -2883,7 +2893,7 @@ dependencies = [
 [[package]]
 name = "nym-socks5-proxy-helpers"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bytes",
  "futures",
@@ -2898,7 +2908,7 @@ dependencies = [
 [[package]]
 name = "nym-socks5-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bincode",
  "log",
@@ -2914,7 +2924,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "log",
  "nym-crypto",
@@ -2940,7 +2950,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-acknowledgements"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-crypto",
  "nym-pemstore",
@@ -2957,7 +2967,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-addressing"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-crypto",
  "nym-sphinx-types",
@@ -2968,7 +2978,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-anonymous-replies"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bs58",
  "nym-crypto",
@@ -2986,7 +2996,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-chunking"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "dashmap",
  "log",
@@ -3004,7 +3014,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-cover"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-crypto",
  "nym-sphinx-acknowledgements",
@@ -3022,7 +3032,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-forwarding"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-outfox",
  "nym-sphinx-addressing",
@@ -3034,7 +3044,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-framing"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "bytes",
  "nym-sphinx-params",
@@ -3046,7 +3056,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-params"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-crypto",
  "nym-sphinx-types",
@@ -3057,7 +3067,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-routing"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-sphinx-addressing",
  "nym-sphinx-types",
@@ -3067,7 +3077,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-types"
 version = "0.2.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "nym-outfox",
  "sphinx-packet",
@@ -3077,7 +3087,7 @@ dependencies = [
 [[package]]
 name = "nym-task"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "futures",
  "log",
@@ -3091,7 +3101,7 @@ dependencies = [
 [[package]]
 name = "nym-topology"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "bs58",
@@ -3115,7 +3125,7 @@ dependencies = [
 [[package]]
 name = "nym-validator-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -3164,7 +3174,7 @@ dependencies = [
 [[package]]
 name = "nym-vesting-contract-common"
 version = "0.7.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -3177,7 +3187,7 @@ dependencies = [
 [[package]]
 name = "nym-wireguard-types"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "base64 0.22.1",
  "log",
@@ -3713,8 +3723,17 @@ checksum = "38200e5ee88914975b69f657f0801b6f6dccafd44fd9326302a4aaeecfacb1d8"
 dependencies = [
  "aho-corasick",
  "memchr",
- "regex-automata",
- "regex-syntax",
+ "regex-automata 0.4.8",
+ "regex-syntax 0.8.5",
+]
+
+[[package]]
+name = "regex-automata"
+version = "0.1.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c230d73fb8d8c1b9c0b3135c5142a8acee3a0558fb8db5cf1cb65f8d7862132"
+dependencies = [
+ "regex-syntax 0.6.29",
 ]
 
 [[package]]
@@ -3725,8 +3744,14 @@ checksum = "368758f23274712b504848e9d5a6f010445cc8b87a7cdb4d7cbee666c1288da3"
 dependencies = [
  "aho-corasick",
  "memchr",
- "regex-syntax",
+ "regex-syntax 0.8.5",
 ]
+
+[[package]]
+name = "regex-syntax"
+version = "0.6.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f162c6dd7b008981e4d40210aca20b4bd0f9b60ca9271061b07f78537722f2e1"
 
 [[package]]
 name = "regex-syntax"
@@ -4948,10 +4973,14 @@ version = "0.3.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ad0f048c97dbd9faa9b7df56362b8ebcaa52adb06b498c050d2f4e32f90a7a8b"
 dependencies = [
+ "matchers",
  "nu-ansi-term",
+ "once_cell",
+ "regex",
  "sharded-slab",
  "smallvec",
  "thread_local",
+ "tracing",
  "tracing-core",
  "tracing-log",
 ]
@@ -5271,7 +5300,7 @@ checksum = "65fc09f10666a9f147042251e0dda9c18f166ff7de300607007e96bdebc1068d"
 [[package]]
 name = "wasm-utils"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#18c6fd3e3e595f00b2a3c1a84aa6f4d3c819404c"
+source = "git+https://github.com/nymtech/nym?tag=nym-binaries-v2024.12-aero#2d78f6939e2e85a8c416e23fb3c45e733a7b7366"
 dependencies = [
  "futures",
  "getrandom",

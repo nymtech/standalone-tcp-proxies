@@ -24,6 +24,10 @@ struct Args {
     /// Optional env filepath - if none is supplied then the proxy defaults to using mainnet else just use a path to one of the supplied files in envs/ e.g. ./envs/sandbox.env
     #[clap(short, long)]
     env_path: Option<String>,
+
+    /// How many clients to have running in reserve for quick access by incoming connections
+    #[clap(long, default_value_t = 2)]
+    client_pool_reserve: usize,
 }
 
 #[tokio::main]
@@ -41,6 +45,7 @@ async fn main() -> Result<()> {
         &args.listen_port,
         args.close_timeout,
         args.env_path.clone(),
+        args.client_pool_reserve,
     )
     .await?;
 

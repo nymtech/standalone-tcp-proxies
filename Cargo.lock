@@ -2133,6 +2133,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ntapi"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8a3895c6391c39d7fe7ebc444a87eb2991b2a0bc718fdabd071eec617fc68e4"
+dependencies = [
+ "winapi",
+]
+
+[[package]]
 name = "nu-ansi-term"
 version = "0.46.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2207,7 +2216,7 @@ dependencies = [
 [[package]]
 name = "nym-api-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bs58",
  "cosmrs",
@@ -2215,6 +2224,7 @@ dependencies = [
  "ecdsa",
  "getset",
  "nym-compact-ecash",
+ "nym-contracts-common",
  "nym-credentials-interface",
  "nym-crypto",
  "nym-ecash-time",
@@ -2222,6 +2232,7 @@ dependencies = [
  "nym-network-defaults",
  "nym-node-requests",
  "nym-serde-helpers",
+ "nym-ticketbooks-merkle",
  "schemars",
  "serde",
  "serde_json",
@@ -2235,7 +2246,7 @@ dependencies = [
 [[package]]
 name = "nym-bandwidth-controller"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bip39",
  "log",
@@ -2246,6 +2257,7 @@ dependencies = [
  "nym-ecash-contract-common",
  "nym-ecash-time",
  "nym-network-defaults",
+ "nym-task",
  "nym-validator-client",
  "rand",
  "thiserror",
@@ -2256,13 +2268,12 @@ dependencies = [
 [[package]]
 name = "nym-bin-common"
 version = "0.6.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "const-str",
  "log",
  "pretty_env_logger",
  "schemars",
- "semver",
  "serde",
  "tracing-subscriber",
  "utoipa",
@@ -2272,7 +2283,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core"
 version = "1.1.15"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -2300,10 +2311,12 @@ dependencies = [
  "nym-gateway-requests",
  "nym-id",
  "nym-metrics",
+ "nym-mixnet-client",
  "nym-network-defaults",
  "nym-nonexhaustive-delayqueue",
  "nym-pemstore",
  "nym-sphinx",
+ "nym-statistics-common",
  "nym-task",
  "nym-topology",
  "nym-validator-client",
@@ -2331,7 +2344,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core-config-types"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "humantime-serde",
  "nym-config",
@@ -2347,7 +2360,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core-gateways-storage"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "cosmrs",
@@ -2366,7 +2379,7 @@ dependencies = [
 [[package]]
 name = "nym-client-core-surb-storage"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "dashmap",
@@ -2383,7 +2396,7 @@ dependencies = [
 [[package]]
 name = "nym-coconut-bandwidth-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -2393,7 +2406,7 @@ dependencies = [
 [[package]]
 name = "nym-coconut-dkg-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -2407,7 +2420,7 @@ dependencies = [
 [[package]]
 name = "nym-compact-ecash"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bincode",
  "bls12_381",
@@ -2430,7 +2443,7 @@ dependencies = [
 [[package]]
 name = "nym-config"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "dirs",
  "handlebars",
@@ -2444,7 +2457,7 @@ dependencies = [
 [[package]]
 name = "nym-contracts-common"
 version = "0.5.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bs58",
  "cosmwasm-schema",
@@ -2459,7 +2472,7 @@ dependencies = [
 [[package]]
 name = "nym-country-group"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "serde",
  "tracing",
@@ -2468,7 +2481,7 @@ dependencies = [
 [[package]]
 name = "nym-credential-storage"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "bincode",
@@ -2486,7 +2499,7 @@ dependencies = [
 [[package]]
 name = "nym-credential-utils"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "log",
  "nym-bandwidth-controller",
@@ -2505,7 +2518,7 @@ dependencies = [
 [[package]]
 name = "nym-credentials"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bincode",
  "bls12_381",
@@ -2528,7 +2541,7 @@ dependencies = [
 [[package]]
 name = "nym-credentials-interface"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bls12_381",
  "nym-compact-ecash",
@@ -2544,7 +2557,7 @@ dependencies = [
 [[package]]
 name = "nym-crypto"
 version = "0.4.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "aead",
  "aes",
@@ -2572,7 +2585,7 @@ dependencies = [
 [[package]]
 name = "nym-ecash-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bs58",
  "cosmwasm-schema",
@@ -2586,7 +2599,7 @@ dependencies = [
 [[package]]
 name = "nym-ecash-time"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-compact-ecash",
  "time",
@@ -2595,7 +2608,7 @@ dependencies = [
 [[package]]
 name = "nym-exit-policy"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "serde",
  "serde_json",
@@ -2607,7 +2620,7 @@ dependencies = [
 [[package]]
 name = "nym-explorer-api-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-api-requests",
  "nym-contracts-common",
@@ -2619,20 +2632,20 @@ dependencies = [
 [[package]]
 name = "nym-explorer-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
- "log",
  "nym-explorer-api-requests",
  "reqwest 0.12.4",
  "serde",
  "thiserror",
+ "tracing",
  "url",
 ]
 
 [[package]]
 name = "nym-gateway-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "futures",
  "getrandom",
@@ -2646,6 +2659,7 @@ dependencies = [
  "nym-network-defaults",
  "nym-pemstore",
  "nym-sphinx",
+ "nym-statistics-common",
  "nym-task",
  "nym-validator-client",
  "rand",
@@ -2669,7 +2683,7 @@ dependencies = [
 [[package]]
 name = "nym-gateway-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bs58",
  "futures",
@@ -2695,7 +2709,7 @@ dependencies = [
 [[package]]
 name = "nym-group-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "cosmwasm-schema",
  "cw-controllers",
@@ -2707,7 +2721,7 @@ dependencies = [
 [[package]]
 name = "nym-http-api-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "http 1.1.0",
@@ -2724,7 +2738,7 @@ dependencies = [
 [[package]]
 name = "nym-id"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-credential-storage",
  "nym-credentials",
@@ -2737,7 +2751,7 @@ dependencies = [
 [[package]]
 name = "nym-metrics"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "dashmap",
  "lazy_static",
@@ -2746,9 +2760,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "nym-mixnet-client"
+version = "0.1.0"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
+dependencies = [
+ "futures",
+ "nym-sphinx",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
 name = "nym-mixnet-contract-common"
 version = "0.6.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bs58",
  "cosmwasm-schema",
@@ -2756,9 +2781,9 @@ dependencies = [
  "cw-controllers",
  "cw-storage-plus",
  "humantime-serde",
- "log",
  "nym-contracts-common",
  "schemars",
+ "semver",
  "serde",
  "serde-json-wasm",
  "serde_repr",
@@ -2769,7 +2794,7 @@ dependencies = [
 [[package]]
 name = "nym-multisig-contract-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -2785,10 +2810,12 @@ dependencies = [
 [[package]]
 name = "nym-network-defaults"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
+ "cargo_metadata",
  "dotenvy",
  "log",
+ "regex",
  "schemars",
  "serde",
  "url",
@@ -2798,7 +2825,7 @@ dependencies = [
 [[package]]
 name = "nym-node-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "base64 0.22.1",
  "celes",
@@ -2819,7 +2846,7 @@ dependencies = [
 [[package]]
 name = "nym-nonexhaustive-delayqueue"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "tokio",
  "tokio-stream",
@@ -2830,7 +2857,7 @@ dependencies = [
 [[package]]
 name = "nym-ordered-buffer"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "log",
  "thiserror",
@@ -2839,7 +2866,7 @@ dependencies = [
 [[package]]
 name = "nym-outfox"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "blake3",
  "chacha20",
@@ -2857,7 +2884,7 @@ dependencies = [
 [[package]]
 name = "nym-pemstore"
 version = "0.3.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "pem",
 ]
@@ -2881,7 +2908,7 @@ dependencies = [
 [[package]]
 name = "nym-sdk"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2909,6 +2936,7 @@ dependencies = [
  "nym-socks5-client-core",
  "nym-socks5-requests",
  "nym-sphinx",
+ "nym-statistics-common",
  "nym-task",
  "nym-topology",
  "nym-validator-client",
@@ -2930,7 +2958,7 @@ dependencies = [
 [[package]]
 name = "nym-serde-helpers"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "base64 0.22.1",
  "bs58",
@@ -2942,7 +2970,7 @@ dependencies = [
 [[package]]
 name = "nym-service-providers-common"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "log",
@@ -2956,7 +2984,7 @@ dependencies = [
 [[package]]
 name = "nym-socks5-client-core"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "anyhow",
  "dirs",
@@ -2989,7 +3017,7 @@ dependencies = [
 [[package]]
 name = "nym-socks5-proxy-helpers"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bytes",
  "futures",
@@ -3004,7 +3032,7 @@ dependencies = [
 [[package]]
 name = "nym-socks5-requests"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bincode",
  "log",
@@ -3020,7 +3048,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "log",
  "nym-crypto",
@@ -3046,7 +3074,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-acknowledgements"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-crypto",
  "nym-pemstore",
@@ -3063,7 +3091,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-addressing"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-crypto",
  "nym-sphinx-types",
@@ -3074,7 +3102,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-anonymous-replies"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bs58",
  "nym-crypto",
@@ -3092,7 +3120,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-chunking"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "dashmap",
  "log",
@@ -3110,7 +3138,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-cover"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-crypto",
  "nym-sphinx-acknowledgements",
@@ -3128,7 +3156,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-forwarding"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-outfox",
  "nym-sphinx-addressing",
@@ -3140,7 +3168,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-framing"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "bytes",
  "log",
@@ -3157,7 +3185,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-params"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-crypto",
  "nym-sphinx-types",
@@ -3168,7 +3196,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-routing"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-sphinx-addressing",
  "nym-sphinx-types",
@@ -3178,7 +3206,7 @@ dependencies = [
 [[package]]
 name = "nym-sphinx-types"
 version = "0.2.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "nym-outfox",
  "sphinx-packet",
@@ -3186,9 +3214,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "nym-statistics-common"
+version = "0.1.0"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
+dependencies = [
+ "futures",
+ "log",
+ "nym-credentials-interface",
+ "nym-crypto",
+ "nym-metrics",
+ "nym-sphinx",
+ "nym-task",
+ "serde",
+ "serde_json",
+ "sha2 0.10.8",
+ "si-scale",
+ "sysinfo",
+ "thiserror",
+ "time",
+ "tokio",
+]
+
+[[package]]
 name = "nym-task"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "futures",
  "log",
@@ -3200,9 +3250,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "nym-ticketbooks-merkle"
+version = "0.1.0"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
+dependencies = [
+ "nym-credentials-interface",
+ "nym-serde-helpers",
+ "rs_merkle",
+ "schemars",
+ "serde",
+ "sha2 0.10.8",
+ "time",
+]
+
+[[package]]
 name = "nym-topology"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "bs58",
@@ -3226,7 +3290,7 @@ dependencies = [
 [[package]]
 name = "nym-validator-client"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -3244,7 +3308,6 @@ dependencies = [
  "flate2",
  "futures",
  "itertools 0.13.0",
- "log",
  "nym-api-requests",
  "nym-coconut-bandwidth-contract-common",
  "nym-coconut-dkg-common",
@@ -3268,6 +3331,7 @@ dependencies = [
  "thiserror",
  "time",
  "tokio",
+ "tracing",
  "url",
  "wasmtimer",
  "zeroize",
@@ -3276,7 +3340,7 @@ dependencies = [
 [[package]]
 name = "nym-vesting-contract-common"
 version = "0.7.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -3289,7 +3353,7 @@ dependencies = [
 [[package]]
 name = "nym-wireguard-types"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "base64 0.22.1",
  "log",
@@ -3961,6 +4025,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bd124222d17ad93a644ed9d011a40f4fb64aa54275c08cc216524a9ea82fb09f"
 dependencies = [
  "digest 0.10.7",
+]
+
+[[package]]
+name = "rs_merkle"
+version = "1.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3b241d2e59b74ef9e98d94c78c47623d04c8392abaf82014dfd372a16041128f"
+dependencies = [
+ "sha2 0.10.8",
 ]
 
 [[package]]
@@ -4775,6 +4848,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2047c6ded9c721764247e62cd3b03c09ffc529b2ba5b10ec482ae507a4a70160"
 
 [[package]]
+name = "sysinfo"
+version = "0.30.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0a5b4ddaee55fb2bea2bf0e5000747e5f5c0de765e5a5ff87f4cd106439f4bb3"
+dependencies = [
+ "cfg-if",
+ "core-foundation-sys",
+ "libc",
+ "ntapi",
+ "once_cell",
+ "rayon",
+ "windows",
+]
+
+[[package]]
 name = "system-configuration"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5510,7 +5598,7 @@ checksum = "65fc09f10666a9f147042251e0dda9c18f166ff7de300607007e96bdebc1068d"
 [[package]]
 name = "wasm-utils"
 version = "0.1.0"
-source = "git+https://github.com/nymtech/nym?rev=8800eccf5a17ad337729124d989467dd16a05800#8800eccf5a17ad337729124d989467dd16a05800"
+source = "git+https://github.com/nymtech/nym?branch=max%2Ftcp-proxy-connection-pool#14269939032ad6fc7408118784d9783170a25b0c"
 dependencies = [
  "futures",
  "getrandom",
@@ -5611,6 +5699,25 @@ name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+
+[[package]]
+name = "windows"
+version = "0.52.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e48a53791691ab099e5e2ad123536d0fff50652600abaf43bbf952894110d0be"
+dependencies = [
+ "windows-core",
+ "windows-targets 0.52.6",
+]
+
+[[package]]
+name = "windows-core"
+version = "0.52.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "33ab640c8d7e35bf8ba19b884ba838ceb4fba93a4e8c65a9059d08afcfc683d9"
+dependencies = [
+ "windows-targets 0.52.6",
+]
 
 [[package]]
 name = "windows-sys"

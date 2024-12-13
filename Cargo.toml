@@ -12,11 +12,11 @@ name = "proxy_client"
 path = "src/proxy_client.rs"
 
 [dependencies]
-nym-sdk = { git = "https://github.com/nymtech/nym", rev = "8800eccf5a17ad337729124d989467dd16a05800" }
-nym-bin-common = { git = "https://github.com/nymtech/nym", rev = "8800eccf5a17ad337729124d989467dd16a05800", features = [
+nym-sdk = { git = "https://github.com/nymtech/nym", branch = "max/tcp-proxy-connection-pool" }
+nym-bin-common = { git = "https://github.com/nymtech/nym", branch = "max/tcp-proxy-connection-pool", features = [
     "basic_tracing",
 ] }
-nym-sphinx-addressing = { git = "https://github.com/nymtech/nym", rev = "8800eccf5a17ad337729124d989467dd16a05800" }
+nym-sphinx-addressing = { git = "https://github.com/nymtech/nym", branch = "max/tcp-proxy-connection-pool" }
 rand = "0.8.5"
 tracing-subscriber = "0.3.18"
 tracing = "0.1.40"

@@ -60,4 +60,4 @@ Options:
 If you are running the `proxy_server` binary on one network and then switch to another, make sure to either specify a new env-specific directory for key and surb storage, or remove the existing one, before running the binary. Since the `proxy_client` relies on ephemeral clients, then this is not a problem for this binary.
 
 ## Documentation
-Docs are in progress with the v2 nym docs. You can find the `.md` files [here](https://github.com/nymtech/nym/blob/max/new-docs-framework/documentation/docs/pages/developers/rust/tcpproxy/architecture.mdx) for the moment.
+Docs can be found [here](https://nymtech.net/docs/developers/tools/standalone-tcpproxy).
